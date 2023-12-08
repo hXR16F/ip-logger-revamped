@@ -16,15 +16,15 @@ This project is a continuation of my previous version: [hXR16F/IP-Logger](https:
 * Generates shortened links using various URL shortening services.
 
 # Installation
-1. Install the required Python libraries:
-```
-pip install flask requests pyngrok colorama waitress
-```
-2. Install Ngrok by following the instructions at [ngrok.com](https://ngrok.com).
-3. Clone the repository:
+1. Install Ngrok by following the instructions at [ngrok.com](https://ngrok.com) and add it to environment variable.
+2. Clone this repository:
 ```
 git clone https://github.com/hXR16F/ip-logger-revamped.git
 cd ip-logger-revamped
+```
+3. Install the required Python libraries:
+```
+pip install -r requirements.txt
 ```
 4. Run the script:
 ```
