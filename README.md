@@ -6,7 +6,9 @@
 </p>
 
 # Overview
-IP Logger Revamped is a Python script built with Flask to log client IP addresses and user agents. It provides the ability to redirect clients to a specified URL and generates shortened links for easy access to the logging endpoint.
+IP Logger Revamped is a Python script built with Flask to log client IP addresses and user agents.\
+It provides the ability to redirect clients to a specified URL and generates shortened links for easy access to the logging endpoint.\
+This project is a continuation of my previous version: [hXR16F/IP-Logger](https://github.com/hXR16F/IP-Logger).
 
 # Features
 * Logs client IP addresses, user agents, and timestamps into a designated file (ip-logger-revamped.txt).
@@ -26,7 +28,7 @@ cd ip-logger-revamped
 ```
 4. Run the script:
 ```
-python your-script.py
+python ip-logger-revamped.py
 ```
 
 # Usage
