@@ -12,8 +12,8 @@ def index():
     user_agent = request.headers.get('User-Agent')
 
     now = time.localtime()
-    current_date = time.strftime("%d/%m/%Y", now)
-    current_time = time.strftime("%H:%M:%S", now)
+    current_date = time.strftime('%d/%m/%Y', now)
+    current_time = time.strftime('%H:%M:%S', now)
 
     with open('ip-logger-revamped.txt', 'a') as f:
         f.write(f'{current_date}, {current_time} - {ip} - {user_agent}\n')
@@ -62,12 +62,13 @@ def shorten_url(url):
         pass
 
     if len(links) >= 2: return links
-    chance = 100 if len(links == 0) else 50
+    chance = 100 if len(links) == 0 else 50
 
     # https://tinyurl.com/app/dev
     try:
         if randint(1, 100) < chance:
-            res = r.post('https://api.tinyurl.com/create?api_token=9FtG3R0bLuCBnlnQPhvDMPqqthcpdDKcySPpsRt81E6WlLfMh97ABVRIEKrI', json={'url': url}, headers={'accept': 'application/json', 'Content-Type': 'application/json'})
+            tokens = ['dMDOk4i7nxK1PIj28LwY5EP1v3LOEN6IQxNiFUvCvR9ALU5v4hK18zZc1lOw', '9FtG3R0bLuCBnlnQPhvDMPqqthcpdDKcySPpsRt81E6WlLfMh97ABVRIEKrI']
+            res = r.post(f'https://api.tinyurl.com/create?api_token={choice(tokens)}', json={'url': url}, headers={'accept': 'application/json', 'Content-Type': 'application/json'})
             if res.status_code == 200:
                 data = json.loads(res.text)
                 if data['data']['tiny_url']:
